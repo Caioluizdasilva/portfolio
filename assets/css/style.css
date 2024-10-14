@@ -239,48 +239,76 @@ section {
   background: linear-gradient(to bottom, #ffcc00, #ff6600);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.projects {
+  padding-top: 5rem;
+  background-color: #f5f5f7;
 }
 
-.project-card {
-  padding: 3rem;
+.projects-grid {
+  display: grid; /* Alterado para grid */
+  grid-template-columns: repeat(3, 1fr); /* Grid com três colunas */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.projects-card {
+  padding: 2rem; /* Alinhado com os cards da experiência */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
-  gap: 1.5rem;
   border: 2px solid black;
   border-radius: 3rem;
-  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.projects-card:hover {
+  transform: scale(1.02); /* Igual ao comportamento de hover da experiência */
+  background-color: black; 
+  color: white;
+}
+
+.projects-card img {
+  width: 100%;
+  height: auto; /* Ajuste para que a imagem não limite a altura */
+  border-radius: 1rem; /* Manter a borda arredondada, semelhante ao estilo original */
+}
+
+.projects-card .project-info {
+  padding: 0;
+  margin-top: 1rem; /* Similar ao padding da grid-card */
+}
+
+.projects-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #ffcc00, #ff6600); /* Gradiente como no grid-card */
+  background-clip: text;
+  color: transparent;
+}
+
+.projects-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+  margin-left: 0.5rem; /* Similar ao estilo dos textos nas grid-cards */
+}
+
+.projects .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 3rem; /* Igual ao estilo do botão nas experiências */
+  border: 2px solid black;
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
+  text-wrap: nowrap;
   transition: 0.3s ease-in-out;
 }
 
-.project-card:hover {
+.projects .btn:hover {
   background-color: black;
   color: white;
-  transform: translate(-1px) scale(1.02);
-}
-
-.project-card img {
-  width: 20vw;
-  border-radius: 1rem;
-}
-
-.project-card:hover .btn {
-  border: 2px solid white;
-  color: white;
-}
-
-.project-card:hover .btn:hover {
-  border: 2px solid white;
-  background-color: white;
-  color: black;
-}
-
-.project-card h3 {
-  font-size: 2rem;
 }
